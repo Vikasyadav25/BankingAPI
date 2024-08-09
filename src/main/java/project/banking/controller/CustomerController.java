@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import project.banking.delegate.CommonDelegate;
+import project.banking.delegate.CustomerCommonDelegate;
 import project.banking.exception.ExitException;
 import project.banking.exception.NoDataFoundException;
 import project.banking.forms.Customerforms;
@@ -20,7 +20,7 @@ import project.banking.forms.Customerforms;
 public class CustomerController {
 
     @Autowired
-    private CommonDelegate commonDelegate;
+    private CustomerCommonDelegate commonDelegate;
 
 //  To register Customer 
     @PostMapping(value="/CustomerRegister",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
@@ -39,7 +39,6 @@ public class CustomerController {
     	}
     	return ResponseEntity.ok(in);
     	
-        
     }
 //  To Update customer
     @PostMapping(value="/CustomerUpdate",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
@@ -58,7 +57,6 @@ public class CustomerController {
     	}
     	return ResponseEntity.ok(in);
     	
-        
     }
     
 }

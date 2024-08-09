@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import project.banking.forms.Customerforms;
 
 @Component
-public class CommonDelegate {
+public class CustomerCommonDelegate {
 	
 	@Autowired
     private CustomerRegisterDelegate customerRegisterDel;
@@ -28,11 +28,6 @@ public class CommonDelegate {
     	HashMap infoTable2=null;
     	HashMap infoTable=customerfrom.toHashMapMain();
     	Long id=customerfrom.getId();
-//    	String fname=customerfrom.getFirst_name();
-//    	String lname=customerfrom.getLast_name();
-//    	String email=customerfrom.getEmail();
-//    	String phNo=customerfrom.getPhone_number();
-//    	String address=customerfrom.getAddress();
     	infoTable2=customerUpdateDel.Start(id,infoTable);
     	customerfrom.setStatus(infoTable2);
     }

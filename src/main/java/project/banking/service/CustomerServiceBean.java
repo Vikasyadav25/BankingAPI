@@ -29,4 +29,5 @@ public class CustomerServiceBean implements CustomerService {
     	details2=customerRepository.updateCustomer(id,fname,lname,address,phno,email);
         return details2;
     }
+    
 }
