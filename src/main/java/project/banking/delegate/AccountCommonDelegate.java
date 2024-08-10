@@ -34,22 +34,22 @@ public class AccountCommonDelegate {
     public void updateAccount(@RequestBody Customerforms customerfrom) {
     	HashMap infoTable2=null;
     	HashMap infoTable=customerfrom.toHashMapAccountdetails();
-    	Long id=customerfrom.getId();
     	infoTable2=updateAccountDel.Start(infoTable);
     	customerfrom.setStatus(infoTable2);
     }
     public void deleteAccount(@RequestBody Customerforms customerfrom) {
     	HashMap infoTable2=null;
-    	HashMap infoTable=customerfrom.toHashMapAccountdetails();
-    	Long id=customerfrom.getId();
-    	infoTable2=deleteAccountDel.Start(infoTable);
+    	String accountNumber=customerfrom.getAccount_number();
+    	String remarks=customerfrom.getRemarks();
+    	infoTable2=deleteAccountDel.Start(accountNumber, remarks);
     	customerfrom.setStatus(infoTable2);
     }
     public void appRejAccount(@RequestBody Customerforms customerfrom) {
     	HashMap infoTable2=null;
-    	HashMap infoTable=customerfrom.toHashMapAccountdetails();
-    	Long id=customerfrom.getId();
-    	infoTable2=appRejAccountDel.Start(infoTable);
+    	String accountNumber=customerfrom.getAccount_number();
+    	char status=customerfrom.getAccountStatus();
+    	String remarks=customerfrom.getManager_remarks();
+    	infoTable2=appRejAccountDel.Start(accountNumber, status, remarks);
     	customerfrom.setStatus(infoTable2);
     }
     

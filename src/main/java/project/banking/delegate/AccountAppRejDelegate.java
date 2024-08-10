@@ -13,16 +13,10 @@ public class AccountAppRejDelegate {
     private AccountService accountService;
 
     
-    public HashMap Start(HashMap customers) {
+    public HashMap Start(String accountNumber,char status,String remarks) {
     	
     	HashMap details=new HashMap();
-//    	String fname=(customers.get("first_name")).toString();
-//    	String lname=(customers.get("last_name")).toString();
-//    	String address=(customers.get("address")).toString();
-//    	String phno=(customers.get("phone_number")).toString();
-//    	String email=(customers.get("email")).toString();
-    	
-    	details=accountService.createAccount(customers);
+    	details=accountService.appRejAccount(accountNumber, status,remarks);
     	return details;
     }
 }

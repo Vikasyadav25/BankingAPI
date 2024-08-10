@@ -27,11 +27,28 @@ public class Customerforms {
     private String state;
     private String pincode;
     private char delete_flag;
-    private String accountStatus;
+    private char accountStatus;
     private String accountCreated_at;
     private String accountUpdated_at;
+    private String remarks;
+    private String manager_remarks;
     
     
+	public String getManager_remarks() {
+		return manager_remarks;
+	}
+
+	public void setManager_remarks(String manager_remarks) {
+		this.manager_remarks = manager_remarks;
+	}
+
+	public String getRemarks() {
+		return remarks;
+	}
+
+	public void setRemarks(String remarks) {
+		this.remarks = remarks;
+	}
 
 	public HashMap getStatus() {
 		return status;
@@ -204,11 +221,11 @@ public class Customerforms {
 		this.delete_flag = delete_flag;
 	}
 
-	public String getAccountStatus() {
+	public char getAccountStatus() {
 		return accountStatus;
 	}
 
-	public void setAccountStatus(String accountStatus) {
+	public void setAccountStatus(char accountStatus) {
 		this.accountStatus = accountStatus;
 	}
 
@@ -264,6 +281,8 @@ public class Customerforms {
 		hmDet.put("accountStatus",getAccountStatus());
 		hmDet.put("accountCreated_at",getAccountCreated_at());
 		hmDet.put("accountUpdated_at",getAccountUpdated_at());
+		hmDet.put("remarks",getRemarks());
+		hmDet.put("manager_remarks",getManager_remarks());
 		return hmDet;
 	}
     // Getters and Setters for Account

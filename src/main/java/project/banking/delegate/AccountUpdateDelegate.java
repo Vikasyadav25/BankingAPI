@@ -20,7 +20,7 @@ public class AccountUpdateDelegate {
 //	    	String phno=(customers.get("phone_number")).toString();
 //	    	String email=(customers.get("email")).toString();
 	    	
-	    	details=accountService.createAccount(customers);
+	    	details=accountService.updateAccount(customers);
 	    	return details;
 	    }
 }

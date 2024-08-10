@@ -62,7 +62,7 @@ public class AccountController {
     public ResponseEntity<Customerforms> deleteAccount(@Validated @RequestBody Customerforms in) {
     	try {
     		commonDelegate.deleteAccount(in);
-    		return ResponseEntity.noContent().build();
+    		return ResponseEntity.ok(in);
         }
     	catch(NoDataFoundException noData) {
     		throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Data Found", noData);
