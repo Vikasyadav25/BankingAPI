@@ -23,7 +23,8 @@ public class CustomerController {
     private CustomerCommonDelegate commonDelegate;
 
 //  To register Customer 
-    @PostMapping(value="/CustomerRegister",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+    @CrossOrigin(origins = "http://localhost:4200")
+    @PostMapping(value="/CustomerOnload",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customerforms> registerCustomer(@RequestBody Customerforms in) {
     	try {
     		commonDelegate.registerCustomer(in);
@@ -41,6 +42,7 @@ public class CustomerController {
     	
     }
 //  To Update customer
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/CustomerUpdate",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customerforms> updateCustomer(@RequestBody Customerforms in) {
     	try {

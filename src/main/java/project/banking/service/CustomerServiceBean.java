@@ -16,10 +16,10 @@ public class CustomerServiceBean implements CustomerService {
     private CustomerDao customerRepository;
 
 
-    public HashMap registerCustomer(String fname,String lname,String address,String phno,String email) {
-    	System.out.println("Hello i am println in servicebean for test case"+fname);
+    public HashMap onloadCustomer(String email) {
+    	System.out.println("Hello i am println in servicebean for test case");
     	HashMap details2=null;
-    	details2=customerRepository.saveCustomer(fname,lname,address,phno,email);
+    	details2=customerRepository.saveCustomer(email);
         return details2;
     }
     
