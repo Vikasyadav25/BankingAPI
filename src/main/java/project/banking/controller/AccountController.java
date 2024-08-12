@@ -22,6 +22,7 @@ public class AccountController {
     private AccountCommonDelegate commonDelegate;
 
 //  To Create Account 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/createAccount",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customerforms> createAccount(@Validated @RequestBody Customerforms in) {
     	try {
@@ -40,6 +41,7 @@ public class AccountController {
     	
     }
 //  To Update Account 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/updateAccount",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customerforms> updateAccount(@Validated @RequestBody Customerforms in) {
     	try {
@@ -58,6 +60,7 @@ public class AccountController {
     	
     }
 //  To Delete Account 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/deleteAccount",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customerforms> deleteAccount(@Validated @RequestBody Customerforms in) {
     	try {
@@ -76,6 +79,7 @@ public class AccountController {
     	
     }
 //    Approve or Reject Account by Admin
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/approve-reject",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customerforms> appRejAccount(@Validated @RequestBody Customerforms in) {
     	try {

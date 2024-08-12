@@ -23,6 +23,7 @@ public class TransactionsController {
     private TransactionCommonDelegate commonDelegate;
 
 //  To deposit Amount 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/deposit",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Transactionforms> deposit(@RequestBody Transactionforms in) {
     	try {
@@ -40,6 +41,7 @@ public class TransactionsController {
     	return ResponseEntity.ok(in);
     	
     }
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/withdraw",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Transactionforms> withdraw(@RequestBody Transactionforms in) {
     	try {
@@ -57,6 +59,7 @@ public class TransactionsController {
     	return ResponseEntity.ok(in);
     	
     }
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/transfer",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Transactionforms> transfer(@RequestBody Transactionforms in) {
     	try {
@@ -74,6 +77,7 @@ public class TransactionsController {
     	return ResponseEntity.ok(in);
     	
     }
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(value="/viewTransaction",consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Transactionforms> viewTransaction(@RequestBody Transactionforms in) {
     	try {
